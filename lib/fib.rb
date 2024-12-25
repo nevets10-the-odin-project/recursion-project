@@ -18,4 +18,15 @@ def fibs(num)
   arr
 end
 
-p fibs(8)
+def fibs_rec(num)
+  if num.zero?
+    [num]
+  elsif num == 1
+    [0, num]
+  else
+    arr = fibs_rec(num - 1)
+    arr << arr[-2] + arr[-1]
+  end
+end
+
+p fibs_rec(8)
